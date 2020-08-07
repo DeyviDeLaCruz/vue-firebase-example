@@ -1,32 +1,29 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <div>
+    <router-link to="/" v-if="existUser">Home</router-link> |
+    <router-link to="/register" v-if="!existUser">Register</router-link> |
+      <router-link to="/login" v-if="!existUser">Login</router-link> |
+      <button v-if="existUser" @click="logout">
+        Logout
+      </button>
     <router-view/>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+<script>
+import { mapActions, mapGetters } from 'vuex'
 
-#nav {
-  padding: 30px;
+export default {
+  data() {
+    return {
+      active: 'guide'
+    }
+  },
+  methods: {
+    ...mapActions(['logout'])  
+  },
+  computed: {
+    ...mapGetters(['existUser'])
+  }
 }
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+</script>
