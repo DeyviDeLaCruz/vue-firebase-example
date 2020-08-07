@@ -1,17 +1,19 @@
 <template>
-    <div>
-        <h1>Home Protected</h1>
-        <p>{{ user.email }}</p>
+    <div class="mt-4">
+        <div class="text-center">
+            <h1>Home Protected</h1>
+            <p>{{ user.email }}</p>
+        </div>
         <router-link to="/add">
-            <button>Add</button>
+            <button class="btn btn-success mb-2">Add</button>
         </router-link>
-        <ul>
-            <li v-for="(task, index) in tasks" :key="index">
+        <ul class="list-group">
+            <li v-for="(task, index) in tasks" :key="index" class="list-group-item">
                 {{ task.name }}
-                <router-link :to="{name: 'Edit', params: {id: task.id}}">
-                    <button>edit</button>
+                <button @click="deleteTask(task.id)" class="btn btn-sm btn-danger float-right ml-2">delete</button>
+                <router-link :to="{name: 'Edit', params: {id: task.id}}" class="float-right">
+                    <button class="btn btn-sm btn-warning">edit</button>
                 </router-link>
-                <button @click="deleteTask(task.id)">delete</button>
             </li>
         </ul>
     </div>

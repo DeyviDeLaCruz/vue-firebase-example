@@ -1,12 +1,12 @@
 <template>
-    <div>
+    <div class="mt-4">
         <h1>Registro de usuarios</h1>
         <form @submit.prevent="createUser({email: email, password: password})">
-            <input type="email" placeholder="email" v-model="email">
-            <input type="password" placeholder="password" v-model="password">
-            <input type="password" placeholder="repeat password" v-model="password_confirm">
+            <input type="email" placeholder="email" v-model="email" class="form-control mb-2">
+            <input type="password" placeholder="password" v-model="password" class="form-control mb-2">
+            <input type="password" placeholder="repeat password" v-model="password_confirm" class="form-control mb-2">
 
-            <button type="submit" :disabled='!desactivar'>Registrar Usuario</button>
+            <button type="submit" :disabled='!desactivar' class="btn btn-primary">Register User</button>
         </form>
         <p>{{ error }}</p>
     </div>
