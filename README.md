@@ -1,4 +1,4 @@
-# vue-firebase-auth
+# vue-firebase-example
 
 ## Project setup
 ```

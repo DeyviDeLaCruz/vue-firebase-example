@@ -3,7 +3,7 @@
     <md-toolbar class="md-success">
       <div class="md-toolbar-row">
         <div class="md-toolbar-section-start">
-          <h3 class="md-title">Tasks</h3>
+          <h3 class="md-title">Vue Tasks</h3>
         </div>
         <div class="md-toolbar-section-end">
           <md-button class="md-just-icon md-simple md-toolbar-toggle">
