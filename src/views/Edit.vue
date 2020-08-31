@@ -1,10 +1,25 @@
 <template>
-    <div class="mt-4">
-        <h1>Edit Task</h1>
-        <form @submit.prevent="editTask(task)" >
-            <input type="text" v-model="task.name" class="form-control mb-2">
-            <button type="submit" class="btn btn-warning">Save</button>
-        </form>
+    <div>
+        <div class="text-center">
+            <h2>Edit Task</h2>
+            <p>edit your task</p>
+        </div>
+        <div class="md-layout md-gutter">
+            <div class="md-layout-item"></div>
+            <div class="md-layout-item">
+                <form @submit.prevent="editTask(task)" >
+                    <md-field>
+                        <label>Task Name</label>
+                        <md-input v-model="task.name"></md-input>
+                    </md-field>
+                    <div class="text-center">
+                        <md-button class="md-primary md-wd" type="submit">Save</md-button>
+                    </div>
+                </form>
+            </div>
+            <div class="md-layout-item"></div>
+
+        </div>
     </div>
 </template>
 

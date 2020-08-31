@@ -1,21 +1,35 @@
 <template>
-    <div class="mt-4">
+    <div>
         <div class="text-center">
-            <h1>Home Protected</h1>
+            <h2>Home Protected</h2>
             <p>{{ user.email }}</p>
         </div>
-        <router-link to="/add">
-            <button class="btn btn-success mb-2">Add</button>
-        </router-link>
-        <ul class="list-group">
-            <li v-for="(task, index) in tasks" :key="index" class="list-group-item">
-                {{ task.name }}
-                <button @click="deleteTask(task.id)" class="btn btn-sm btn-danger float-right ml-2">delete</button>
-                <router-link :to="{name: 'Edit', params: {id: task.id}}" class="float-right">
-                    <button class="btn btn-sm btn-warning">edit</button>
+        <br>
+        <div class="md-layout md-gutter">
+            <div class="md-layout-item"></div>
+            <div class="md-layout-item">
+                <router-link to="/add">
+                    <md-button class="md-success md-round mb-2">Add</md-button>
                 </router-link>
-            </li>
-        </ul>
+                <md-list class="md-double-line">
+                    <md-subheader>tasks</md-subheader>
+
+                    <md-list-item v-for="(task, index) in tasks" :key="index">
+                        <md-icon class="md-secondary">fiber_manual_record</md-icon>
+
+                        <div class="md-list-item-text">
+                            <span>{{ task.name }}</span>
+                        </div>
+
+                        <router-link :to="{name: 'Edit', params: {id: task.id}}" class="float-right">
+                            <md-button class="md-warning md-just-icon md-round"><md-icon>create</md-icon></md-button>
+                        </router-link>
+                        <md-button class="md-danger md-just-icon md-round" @click="deleteTask(task.id)"><md-icon>delete</md-icon></md-button>
+                    </md-list-item>
+                </md-list>
+            </div>
+            <div class="md-layout-item"></div>
+        </div>
     </div>
 </template>
 

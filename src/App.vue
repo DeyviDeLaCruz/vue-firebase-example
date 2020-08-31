@@ -1,11 +1,41 @@
 <template>
-  <div class="container mt-2" id="app">
-    <router-link to="/" v-if="existUser" class="btn btn-primary mr-2">Home</router-link>
-    <router-link to="/register" v-if="!existUser" class="btn btn-secondary mr-2">Register</router-link>
-      <router-link to="/login" v-if="!existUser" class="btn btn-primary mr-2">Login</router-link>
-      <button v-if="existUser" @click="logout" class="btn btn-danger">
-        Logout
-      </button>
+  <div id="app">
+    <md-toolbar class="md-success">
+      <div class="md-toolbar-row">
+        <div class="md-toolbar-section-start">
+          <h3 class="md-title">Tasks</h3>
+        </div>
+        <div class="md-toolbar-section-end">
+          <md-button class="md-just-icon md-simple md-toolbar-toggle">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </md-button>
+
+          <div class="md-collapse">
+            <md-list>
+              <md-list-item to="/" v-if="existUser" exact>
+                <i class="material-icons">home</i>
+                <p class="hidden-lg hidden-md">Home</p>
+              </md-list-item>
+
+              <md-list-item to="/register" v-if="!existUser">
+                <i class="material-icons">person</i>
+                <p class="hidden-lg hidden-md">register</p>
+              </md-list-item>
+              <md-list-item to="/login" v-if="!existUser">
+                <i class="material-icons">vpn_key</i>
+                <p class="hidden-lg hidden-md">Login</p>
+              </md-list-item>
+              <md-list-item href="javascript:void(0)" @click="logout" v-if="existUser">
+                <i class="material-icons">power_settings_new</i>
+                <p class="hidden-lg hidden-md">Logout</p>
+              </md-list-item>
+            </md-list>
+          </div>
+        </div>
+      </div>
+    </md-toolbar>
     <router-view/>
   </div>
 </template>

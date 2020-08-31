@@ -3,6 +3,9 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+import MaterialKit from "./plugins/material-kit";
+Vue.use(MaterialKit);
+
 Vue.config.productionTip = false
 
 import { auth } from './firebase'

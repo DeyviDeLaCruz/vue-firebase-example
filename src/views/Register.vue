@@ -1,14 +1,33 @@
 <template>
-    <div class="mt-4">
-        <h1>Registro de usuarios</h1>
-        <form @submit.prevent="createUser({email: email, password: password})">
-            <input type="email" placeholder="email" v-model="email" class="form-control mb-2">
-            <input type="password" placeholder="password" v-model="password" class="form-control mb-2">
-            <input type="password" placeholder="repeat password" v-model="password_confirm" class="form-control mb-2">
-
-            <button type="submit" :disabled='!desactivar' class="btn btn-primary">Register User</button>
-        </form>
-        <p>{{ error }}</p>
+    <div>
+        <div class="text-center">
+            <h2>New User</h2>
+            <p>complete your information</p>
+        </div>
+        <div class="md-layout md-gutter">
+            <div class="md-layout-item"></div>
+            <div class="md-layout-item">
+                <form @submit.prevent="createUser({email: email, password: password})">
+                    <md-field>
+                        <label>email</label>
+                        <md-input v-model="email" type="email"></md-input>
+                    </md-field>
+                    <md-field>
+                        <label>password</label>
+                        <md-input v-model="password" type="password"></md-input>
+                    </md-field>
+                    <md-field>
+                        <label>repeat password</label>
+                        <md-input v-model="password_confirm" type="password"></md-input>
+                    </md-field>
+                    <div class="text-center">
+                        <md-button class="md-primary md-wd" type="submit" :disabled='!desactivar'>Register</md-button>
+                    </div>
+                </form>
+                <p>{{ error }}</p>
+            </div>
+            <div class="md-layout-item"></div>
+        </div>
     </div>
 </template>
 
