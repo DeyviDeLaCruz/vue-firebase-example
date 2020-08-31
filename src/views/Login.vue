@@ -6,7 +6,7 @@
                     <div class="md-layout-item md-size-33 md-small-size-66 md-xsmall-size-100 md-medium-size-40 mx-auto">
                         <login-card header-color="green">
                             <h4 slot="title" class="card-title">Login User</h4>
-                            <p slot="description" class="description">Ingresa tus credenciales</p>
+                            <p slot="description" class="description">write your credentials</p>
                             <md-field class="md-form-group" slot="inputs">
                                 <md-icon>email</md-icon>
                                 <label>Email...</label>
